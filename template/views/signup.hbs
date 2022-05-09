@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Create Account</title>
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="mainLogin">
+        <h3>{{error}}</h3>
+        <form action="/signup" method="post"  style="width:35%">
+            <h3 class="text-center">Please sign Up</h3>
+            <input type="text" name="signup_name" class="form-control mb-3 p-2" placeholder="Username">
+            <input type="text" name="signup_pass" class="form-control mb-3 p-2" placeholder="Password">
+            <div class="d-flex">
+            <button type="submit" class="btnSign btn mx-auto">sign in</button>
+            </div>
+            <p class="mt-5 mb-3 text-muted text-center">BeetaBie.All Rights Reserved © 2022–2023</p>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

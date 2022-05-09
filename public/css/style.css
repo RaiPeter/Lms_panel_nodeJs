@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary: #484848;
+    --main-text:#6255a3;
+}
+
+/* login  */
+.mainLogin{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnSign{
+    background-color: var(--main-text);
+    color: #fff;
+}
+.course_video_container{
+    border: 2px dashed blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    cursor: pointer;
+}
+.course_video_container i{
+    font-size: 2.5rem;
+    color: #6255a3;
+}
+#upload_filename, #upload_filesize{
+    color: #656565;
+    font-size: 15px;
+}
+.progressbar{
+    border: 1px solid blueviolet;
+    width: 50%;
+    height: 13px;
+    border-radius: 10px;
+    /* background-color: green; */
+}
+
+main{
+    overflow-y: auto;
+}
+
+

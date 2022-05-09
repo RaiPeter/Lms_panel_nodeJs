@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <title>All Classes</title>
+</head>
+
+<body>
+    {{>navbar}}
+    <main style="height:90vh" class="d-flex">
+        {{>sidebar}}
+        <div class="contentContainer w-100 p-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">All Classes</li>
+                </ol>
+            </nav>
+            <table class="table" id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Class No.</th>
+                        <th>Title</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{classNo}}</td>
+                        <td>{{classTitle}}</td>
+                        
+                        <td><a href="/edit-class?class={{_id}}" class="btn btn-primary">Edit</a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+             
+
+
+
+            </table>
+
+
+
+
+        </div>
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+    {{>footer}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#courseTable').DataTable();
+        });
+    </script>
+
+
+</body>
+
+</html>
