@@ -8,7 +8,7 @@ const cors = require('cors')
 const cookie_Parser = require('cookie-parser');
 app.use(cookie_Parser())
 const corsOptions = {
-    origin: "https://www.kalakarist.com"
+    origin: "*"
 };
 // db connection 
 require('./server/db/conn')
