@@ -8,7 +8,7 @@ exports.home = async (req, res) => {
     try {
         const username = req.user.username;
         res.render('index', {
-            user_name : username
+            user_name: username
         })
     } catch (e) {
         res.status(500).render('error500');
@@ -44,7 +44,7 @@ exports.loginPost = async (req, res) => {
         const userDetails = await Signup_model.findOne({ username: req.body.login_user })
         const isMatch = await bcrypt.compare(req.body.login_pass, userDetails.password)
         if (isMatch) {
-            
+
             const token = await userDetails.generateAuthToken();
             res.cookie('beetabie', token, {
                 expires: new Date(Date.now() + 1000000),
@@ -52,12 +52,12 @@ exports.loginPost = async (req, res) => {
             })
             res.redirect('/');
         } else {
-            res.render('login', {error: 'Invalid Credentials'})
+            res.render('login', { error: 'Invalid Credentials' })
         }
 
     } catch (e) {
         res.status(400);
-        res.render('login', {error: 'Invalid Credentials'})
+        res.render('login', { error: 'Invalid Credentials' })
     }
 }
 
@@ -91,7 +91,7 @@ exports.add_course = async (req, res) => {
 
 exports.add_coursePost = async (req, res) => {
     try {
-      
+
         const rand = Math.random().toString(36).slice(2, 15);
         const courseData = new Course_model({
             flag: 'course' + rand,

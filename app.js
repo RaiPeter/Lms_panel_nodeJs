@@ -5,6 +5,8 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const hbs = require('hbs');
 const cors = require('cors')
+const bodyParser = require("body-parser");
+
 const cookie_Parser = require('cookie-parser');
 app.use(cookie_Parser())
 const corsOptions = {
@@ -21,6 +23,8 @@ const partials_Path = path.join(__dirname, 'template/partials');
 // midleware 
 app.use(express.static(static_Path))
 app.use(cors(corsOptions))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 // template engine 
 app.set('view engine', 'hbs');
 app.set('views', template_Path);
