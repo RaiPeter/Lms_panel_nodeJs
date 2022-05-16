@@ -43,7 +43,7 @@ apirouter.get('/class/:course', api_auth, async (req, res) => {
     }
 })
 // =========== singel class by get===========
-apirouter.get('/class_invd/:id', api_auth, async (req, res) => {
+apirouter.get('/class_invd/:id', async (req, res) => {
     try {
         console.log(req.params);
         const id = req.params.id;

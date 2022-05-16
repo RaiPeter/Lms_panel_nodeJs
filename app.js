@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3033;
 const hbs = require('hbs');
 const cors = require('cors')
 const cookie_Parser = require('cookie-parser');
@@ -28,8 +28,8 @@ hbs.registerPartials(partials_Path);
 
 
 app.use(function (req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "www.kalakarist.com");
-    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+   res.setHeader("Access-Control-Allow-Origin", "*");
+     //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 // routes 
