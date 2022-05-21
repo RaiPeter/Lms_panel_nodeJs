@@ -2,7 +2,7 @@
 module.exports = async(req, res, next)=>{
 
     try {
-        const auth = "apiauth123";
+        const auth = "anej23kjas3452@ssf45$sas";
         const authid = await req.body.apiauth;
         if (auth === authid) {
             console.log('api auth matched');

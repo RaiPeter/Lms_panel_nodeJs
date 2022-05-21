@@ -15,7 +15,7 @@ apirouter.get('/courses', async (req, res) => {
     }
 })
 // invd course 
-apirouter.get('/courses/:flag', async (req, res) => {
+apirouter.post('/courses/:flag', async (req, res) => {
     try {
         console.log(req.params);
         const flag = req.params.flag;
@@ -30,11 +30,11 @@ apirouter.get('/courses/:flag', async (req, res) => {
 })
 
 // ========= all class by get ==========
-apirouter.get('/class/:course', api_auth, async (req, res) => {
+apirouter.post('/class/:course', api_auth, async (req, res) => {
     try {
         console.log(req.params);
         const course = req.params.course;
-        const Class_data = await Class_model.find({ courseId: course }).select({ date: 0, __v: 0 });
+        const Class_data = await Class_model.find({ courseId: course }).sort({classNo: 1});
         console.log('Class ', Class_data);
         res.json(Class_data)
     } catch (e) {
@@ -43,7 +43,7 @@ apirouter.get('/class/:course', api_auth, async (req, res) => {
     }
 })
 // =========== singel class by get===========
-apirouter.get('/class_invd/:id', async (req, res) => {
+apirouter.post('/class_invd/:id', async (req, res) => {
     try {
         console.log(req.params);
         const id = req.params.id;
